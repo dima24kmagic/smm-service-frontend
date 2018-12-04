@@ -20,8 +20,6 @@ import {history} from '../../../store'
 
 const CLEAN_TASK_ERRORS = ['Возникла ошибка', 'Завершили'] // errors? finished != error
 
-console.log('styles')
-
 class CleanPage extends Component {
     state = {
         publics: [],

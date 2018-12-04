@@ -7,6 +7,7 @@ import AddMoneyPage from './components/AddMoneyPage/AddMoneyPage'
 import axios from 'axios'
 import FeedbackPage from './components/FeedbackPage/FeedbackPage'
 import {history} from '../store'
+import SurveyPage from './components/SurveyPage/SurveyPage'
 
 if (process.env.NODE_ENV === 'production') {
     // noinspection JSUnresolvedVariable
@@ -26,8 +27,8 @@ class App extends Component {
     }
 
     async componentWillMount() {
-        window.user_id = getQueryParam('viewer_id')
-        window.auth_key = getQueryParam('auth_key')
+        // window.user_id = getQueryParam('viewer_id')
+        // window.auth_key = getQueryParam('auth_key')
         history.push('/')
         await this.updateBalance()
     }
@@ -74,6 +75,7 @@ class App extends Component {
                             )}
                         />
                         <Route path="/clean" component={CleanPage} />
+                        <Route path="/survey" component={SurveyPage} />
                         <Route
                             path={'/add_money'}
                             render={() => (
