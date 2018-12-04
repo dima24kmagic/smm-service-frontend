@@ -7,7 +7,7 @@ import React from 'react'
 const VK = window.VK
 
 const API_URL = 'https://hot-dog.site/api'
-
+const VK_API_URL = 'https://api.vk.com/method'
 export const API = {
     getUserGroups: () => getGroupsPromise,
     getGroupsForClean: () =>
@@ -60,11 +60,19 @@ export const API = {
                 id: public_id
             }
         }),
-    setAccessToken: (token) => axios.patch('https://hot-dog.site/api/setAccessToken', {
-        access_token: token,
-        user_vk_id: window.user_id,
-        auth_key: window.auth_key
-    })
+    setAccessToken: (token) =>
+        axios.patch('https://hot-dog.site/api/setAccessToken', {
+            access_token: token,
+            user_vk_id: window.user_id,
+            auth_key: window.auth_key
+        }),
+    getPollById: (ownerID, pollID) =>
+        axios.get(VK_API_URL + '/polls.getById', {
+            params: {
+                owner_id: ownerID,
+                poll_id: pollID
+            }
+        })
 }
 
 const getGroupsPromise = new Promise((resolve, reject) => {

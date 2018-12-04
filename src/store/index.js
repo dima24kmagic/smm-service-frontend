@@ -6,7 +6,7 @@ import rootReducer from './reducers/reducer.root'
 
 export const history = createBrowserHistory()
 
-const middleware = [thunk, logger]
+const middleware = [thunk]
 const devToolsExtension = window.devToolsExtension
 const enhancers = []
 
