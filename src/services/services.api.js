@@ -64,11 +64,8 @@ export const API = {
             auth_key: window.auth_key
         }),
     getPollById: (ownerID, pollID) => getPollById(ownerID, pollID),
-    getAccessToUserWall: () => {
-        VK.callMethod('showSettingsBox', 8192, (data) => {
-            console.log('SETTINGS BOX', data)
-        })
-    }
+    getAccessToUserWall: () => VK.callMethod('showSettingsBox', 8192),
+    onSettingChange: () => onSettingChangePromise()
 }
 
 const getPollById = (ownerID, pollID) => {
@@ -89,6 +86,13 @@ const getPollById = (ownerID, pollID) => {
     })
 }
 
+const onSettingChangePromise = () => {
+    return new Promise((resolve, reject) => {
+        VK.addCallback('onSettingsChanged', (settings) => {
+            resolve(settings)
+        })
+    })
+}
 const getGroupsPromise = new Promise((resolve, reject) => {
     VK.init(
         () => {

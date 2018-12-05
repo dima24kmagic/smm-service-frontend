@@ -14,6 +14,10 @@
     font-size: 1.6rem;
     color: white;
 
+    @media (max-width: 720px){
+        padding: 0 2rem;
+    }
+
     &__info {
         display: flex;
         align-items: center;
@@ -36,6 +40,9 @@
         text-decoration: none;
         &:not(:last-child) {
             margin-right: 4rem;
+        }
+        @media (max-width: 720px) {
+            padding-right: 1.5rem;
         }
     }
 }

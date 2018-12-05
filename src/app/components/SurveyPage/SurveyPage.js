@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import SurveyAddForm from './SurveyAddForm/SurveyAddForm'
 
-console.log("ERR DATA");
+console.log("On settings change");
 
 class SurveyPage extends Component {
     state = {
