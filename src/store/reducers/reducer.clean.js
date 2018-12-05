@@ -260,7 +260,11 @@ export const cleanAllGroups = (cb, allGroups) => {
             return g.backEndID
         })
         API.startCleanTask(groupsIDs).then((res) => {
-            switch (res.data.error.id) {
+            let isAnyError
+            if (res.data.error) {
+                isAnyError = res.data.error.id
+            }
+            switch (isAnyError) {
                 case 1:
                     getAccessTokenFromUser()
                     break
@@ -431,7 +435,7 @@ function getAccessTokenFromUser() {
         API.setAccessToken(token)
     })
 }
-function showNotEnoughMoneyModal(money) {
+function showNotEnoughMoneyModal(money, cb) {
     const response = swal({
         title: 'Упс.. Недостаточно денег',
         icon: 'error',
@@ -440,7 +444,6 @@ function showNotEnoughMoneyModal(money) {
     })
     response.then((r) => {
         if (r === true) {
-            // history.push('/add_money')
             console.log('GO TO ADD MONEY')
         }
     })

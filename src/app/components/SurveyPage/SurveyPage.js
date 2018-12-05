@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import SurveyAddForm from './SurveyAddForm/SurveyAddForm'
 
-console.log("VK API");
+console.log("ERR DATA");
 
 class SurveyPage extends Component {
     state = {

@@ -1,5 +1,5 @@
 const initialState = {
-
+    isAllowToGetPoll: false
 }
 
 export default (state = initialState, action) => {

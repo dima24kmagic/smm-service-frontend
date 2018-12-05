@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 
-const VK = window.VK
+let VK = window.VK
 
 const API_URL = 'https://hot-dog.site/api'
 const VK_API_URL = 'https://api.vk.com/method'
@@ -63,11 +63,30 @@ export const API = {
             user_vk_id: window.user_id,
             auth_key: window.auth_key
         }),
-    getPollById: (ownerID, pollID) => getPollById(ownerID, pollID)
+    getPollById: (ownerID, pollID) => getPollById(ownerID, pollID),
+    getAccessToUserWall: () => {
+        VK.callMethod('showSettingsBox', 8192, (data) => {
+            console.log('SETTINGS BOX', data)
+        })
+    }
 }
 
 const getPollById = (ownerID, pollID) => {
-    VK.callMethod('showGroupSettingsBox', 262144)
+    return new Promise((resolve, reject) => {
+        VK.api(
+            'polls.getById',
+            {v: '5.85', owner_id: ownerID, poll_id: pollID},
+            (data) => {
+                if (data.error) {
+                    console.log('ERROR OCCUR')
+                    API.getAccessToUserWall()
+                    reject(data.error)
+                } else {
+                    resolve(data)
+                }
+            }
+        )
+    })
 }
 
 const getGroupsPromise = new Promise((resolve, reject) => {
