@@ -1,7 +1,4 @@
 import axios from 'axios'
-import ReactDOM from 'react-dom'
-import {InputModal} from '../app/components/CleanPage/InputModal'
-import swal from 'sweetalert'
 import React from 'react'
 
 const VK = window.VK
@@ -66,13 +63,11 @@ export const API = {
             user_vk_id: window.user_id,
             auth_key: window.auth_key
         }),
-    getPollById: (ownerID, pollID) =>
-        axios.get(VK_API_URL + '/polls.getById', {
-            params: {
-                owner_id: ownerID,
-                poll_id: pollID
-            }
-        })
+    getPollById: (ownerID, pollID) => getPollById(ownerID, pollID)
+}
+
+const getPollById = (ownerID, pollID) => {
+    VK.callMethod('showGroupSettingsBox', 262144)
 }
 
 const getGroupsPromise = new Promise((resolve, reject) => {

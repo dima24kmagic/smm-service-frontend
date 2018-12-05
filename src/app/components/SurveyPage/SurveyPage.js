@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import SurveyAddForm from './SurveyAddForm/SurveyAddForm'
 
+console.log("VK API");
+
 class SurveyPage extends Component {
     state = {
         showAddForm: false

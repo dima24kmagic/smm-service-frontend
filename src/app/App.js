@@ -27,8 +27,8 @@ class App extends Component {
     }
 
     async componentWillMount() {
-        // window.user_id = getQueryParam('viewer_id')
-        // window.auth_key = getQueryParam('auth_key')
+        window.user_id = getQueryParam('viewer_id')
+        window.auth_key = getQueryParam('auth_key')
         history.push('/')
         await this.updateBalance()
     }
