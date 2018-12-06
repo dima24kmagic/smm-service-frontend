@@ -1,14 +1,14 @@
 {
-  "main.css": "/smm-service-frontend/static/css/main.7d5c3670.chunk.css",
-  "main.js": "/smm-service-frontend/static/js/main.1e186ffc.chunk.js",
-  "main.js.map": "/smm-service-frontend/static/js/main.1e186ffc.chunk.js.map",
+  "main.css": "/smm-service-frontend/static/css/main.19488b62.chunk.css",
+  "main.js": "/smm-service-frontend/static/js/main.359ff0c6.chunk.js",
+  "main.js.map": "/smm-service-frontend/static/js/main.359ff0c6.chunk.js.map",
   "static/js/1.9ccca2d7.chunk.js": "/smm-service-frontend/static/js/1.9ccca2d7.chunk.js",
   "static/js/1.9ccca2d7.chunk.js.map": "/smm-service-frontend/static/js/1.9ccca2d7.chunk.js.map",
   "runtime~main.js": "/smm-service-frontend/static/js/runtime~main.be1cbe97.js",
   "runtime~main.js.map": "/smm-service-frontend/static/js/runtime~main.be1cbe97.js.map",
-  "static/media/fontello.css": "/smm-service-frontend/static/media/fontello.31c8cd93.woff",
-  "static/css/main.7d5c3670.chunk.css.map": "/smm-service-frontend/static/css/main.7d5c3670.chunk.css.map",
+  "static/media/fontello.css": "/smm-service-frontend/static/media/fontello.17b4028a.woff2",
+  "static/css/main.19488b62.chunk.css.map": "/smm-service-frontend/static/css/main.19488b62.chunk.css.map",
   "index.html": "/smm-service-frontend/index.html",
-  "precache-manifest.f3035660aeb9575c7ba486f4c3d98815.js": "/smm-service-frontend/precache-manifest.f3035660aeb9575c7ba486f4c3d98815.js",
+  "precache-manifest.5dc2299e784b1e504501c28637bf6eba.js": "/smm-service-frontend/precache-manifest.5dc2299e784b1e504501c28637bf6eba.js",
   "service-worker.js": "/smm-service-frontend/service-worker.js"
 }
