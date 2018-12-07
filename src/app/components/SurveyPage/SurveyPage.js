@@ -1,8 +1,6 @@
 import React, {Component} from 'react'
 import SurveyAddForm from './SurveyAddForm/SurveyAddForm'
 
-console.log("On settings change");
-
 class SurveyPage extends Component {
     state = {
         showAddForm: false
@@ -24,6 +22,12 @@ class SurveyPage extends Component {
                     onClick={this.toggleAddForm}
                 />
                 {showAddForm && <SurveyAddForm />}
+                {showAddForm && (
+                    <div className="btns-holder">
+                        <div className="btn-ff">Добавить опрос</div>
+                        <div className="btn-ff">Узнать победителей</div>
+                    </div>
+                )}
             </div>
         )
     }
