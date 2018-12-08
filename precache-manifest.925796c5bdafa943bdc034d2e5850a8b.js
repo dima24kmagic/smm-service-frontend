@@ -24,19 +24,19 @@ self.__precacheManifest = [
     "url": "/smm-service-frontend/static/js/runtime~main.be1cbe97.js"
   },
   {
-    "revision": "7e63b39de254b9f7467d",
-    "url": "/smm-service-frontend/static/js/main.7e63b39d.chunk.js"
+    "revision": "d30237dfb28737a4d2db",
+    "url": "/smm-service-frontend/static/js/main.d30237df.chunk.js"
   },
   {
     "revision": "177c60e97665eed508a9",
     "url": "/smm-service-frontend/static/js/1.177c60e9.chunk.js"
   },
   {
-    "revision": "7e63b39de254b9f7467d",
+    "revision": "d30237dfb28737a4d2db",
     "url": "/smm-service-frontend/static/css/main.b6e484f8.chunk.css"
   },
   {
-    "revision": "154e951a3b89dc63e1df2f60260530ff",
+    "revision": "b4e09c5c818ad6f940b5fe48290b352e",
     "url": "/smm-service-frontend/index.html"
   }
 ];
