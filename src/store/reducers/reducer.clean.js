@@ -1,6 +1,5 @@
 import {API} from '../../services/services.api'
 import swal from 'sweetalert'
-import axios from 'axios'
 import ReactDOM from 'react-dom'
 import {InputModal} from '../../app/components/CleanPage/InputModal'
 import React from 'react'

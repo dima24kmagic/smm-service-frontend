@@ -1,10 +1,13 @@
 import axios from 'axios'
-import React from 'react'
 
 let VK = window.VK
+if (VK === undefined) {
+    VK = {
+        init: () => {}
+    }
+}
 
 const API_URL = 'https://hot-dog.site/api'
-const VK_API_URL = 'https://api.vk.com/method'
 export const API = {
     getUserGroups: () => getGroupsPromise,
     getGroupsForClean: () =>
@@ -63,20 +66,37 @@ export const API = {
             user_vk_id: window.user_id,
             auth_key: window.auth_key
         }),
-    getPollById: (ownerID, pollID) => getPollById(ownerID, pollID),
+    getPollById: ({ownerID, pollID}) => getPollById({ownerID, pollID}),
+    getAnswersByAnswerID: ({pollID, rightAnswerID}) =>
+        getAnswersByAnswerIdPromise({pollID, rightAnswerID}),
     getAccessToUserWall: () => VK.callMethod('showSettingsBox', 8192),
     onSettingChange: () => onSettingChangePromise()
 }
 
-const getPollById = (ownerID, pollID) => {
+const getPollById = ({ownerID, pollID}) => {
+    return new Promise((resolve, reject) => {
+        VK.api('polls.getById', {v: '5.92', poll_id: pollID}, (data) => {
+            if (data.error) {
+                reject(data.error)
+            } else {
+                resolve(data)
+            }
+        })
+    })
+}
+
+function getAnswersByAnswerIdPromise({pollID, rightAnswerID}) {
     return new Promise((resolve, reject) => {
         VK.api(
-            'polls.getById',
-            {v: '5.85', owner_id: ownerID, poll_id: pollID},
+            'polls.getVoters',
+            {
+                v: '5.92',
+                poll_id: pollID,
+                answer_ids: rightAnswerID
+            },
             (data) => {
                 if (data.error) {
-                    console.log('ERROR OCCUR')
-                    API.getAccessToUserWall()
+                    console.log('ERROR', data.error)
                     reject(data.error)
                 } else {
                     resolve(data)
@@ -131,14 +151,5 @@ const converter = (item) => {
         avatar_url: item.photo_100,
         id: item.id,
         name: item.name
-    }
-}
-
-const authHeaderDogsAPI = () => {
-    return {
-        params: {
-            user_vk_id: window.user_id,
-            auth_key: window.auth_key
-        }
     }
 }
