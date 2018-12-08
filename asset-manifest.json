@@ -1,7 +1,7 @@
 {
   "main.css": "/smm-service-frontend/static/css/main.b6e484f8.chunk.css",
-  "main.js": "/smm-service-frontend/static/js/main.1b63f3e9.chunk.js",
-  "main.js.map": "/smm-service-frontend/static/js/main.1b63f3e9.chunk.js.map",
+  "main.js": "/smm-service-frontend/static/js/main.fef506c4.chunk.js",
+  "main.js.map": "/smm-service-frontend/static/js/main.fef506c4.chunk.js.map",
   "static/js/1.177c60e9.chunk.js": "/smm-service-frontend/static/js/1.177c60e9.chunk.js",
   "static/js/1.177c60e9.chunk.js.map": "/smm-service-frontend/static/js/1.177c60e9.chunk.js.map",
   "runtime~main.js": "/smm-service-frontend/static/js/runtime~main.be1cbe97.js",
@@ -9,6 +9,6 @@
   "static/media/fontello.css": "/smm-service-frontend/static/media/fontello.17b4028a.woff2",
   "static/css/main.b6e484f8.chunk.css.map": "/smm-service-frontend/static/css/main.b6e484f8.chunk.css.map",
   "index.html": "/smm-service-frontend/index.html",
-  "precache-manifest.7781a363b26e8aaa18dc4399ac0ea09e.js": "/smm-service-frontend/precache-manifest.7781a363b26e8aaa18dc4399ac0ea09e.js",
+  "precache-manifest.281037f21bdecaf472ee062221990e22.js": "/smm-service-frontend/precache-manifest.281037f21bdecaf472ee062221990e22.js",
   "service-worker.js": "/smm-service-frontend/service-worker.js"
 }
