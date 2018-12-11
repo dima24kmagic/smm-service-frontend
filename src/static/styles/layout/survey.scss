@@ -25,6 +25,19 @@
         width: 2rem;
         margin-bottom: 2rem;
     }
+    .surveys-form-wrapper {
+        width: 450px;
+        padding: 2rem;
+        max-height: 35rem;
+        overflow: auto;
+        margin-bottom: 2rem;
+    }
+    .winners-list {
+        font-size: 16px;
+        max-height: 20rem;
+        overflow: auto;
+        background: white;
+    }
 }
 
 .survey-add {

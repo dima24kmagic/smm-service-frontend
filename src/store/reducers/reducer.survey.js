@@ -5,6 +5,8 @@ const ON_URL_CHANGE = 'ON_URL_CHANGE'
 const ON_ANSWER_CHANGE = 'ON_ANSWER_CHANGE'
 const ADD_SURVEY_FORM = 'ADD_SURVEY_FORM'
 const GET_WINNERS = 'GET_WINNERS'
+const END_LOADING_WINNERS = 'END_LOADING_WINNERS'
+const GET_POLL_BY_ID = 'GET_POLL_BY_ID'
 
 const initialState = {
     surveys: {
@@ -16,8 +18,6 @@ const initialState = {
     winners: [],
     loadingWinners: true
 }
-
-const GET_POLL_BY_ID = 'GET_POLL_BY_ID'
 
 export default (state = initialState, action) => {
     const {type, payload} = action
@@ -69,7 +69,14 @@ export default (state = initialState, action) => {
             console.log('UNIQUE USERS:', uniqueUsers)
             return {
                 ...state,
-                winners: uniqueUsers
+                winners: uniqueUsers,
+                loadingWinners: true
+            }
+        }
+        case END_LOADING_WINNERS: {
+            return {
+                ...state,
+                loadingWinners: false
             }
         }
         default:
@@ -97,16 +104,11 @@ export const GetPollById = ({ownerID, pollID, s_key, s_right_answer}) => {
     return API.getPollById({ownerID, pollID})
         .then(({response}) => {
             return response
-            // const rightAnswerID = getRightAnswerID({response, s_right_answer})
-            // getUsersThatResponseRight({pollID, rightAnswerID}).then((rightUsers) => {
-            //     console.log('SHIT', rightUsers)
-            // })
         })
         .catch((err) => {
             API.getAccessToUserWall()
             return API.onSettingChange().then((r) => {
                 return API.getPollById({ownerID, pollID}).then(({response}) => {
-                    // console.log(`${s_key} DATA`, response)
                     return response
                 })
             })
@@ -162,7 +164,6 @@ export const GetWinners = (surveys) => {
             const s_right_answer = surveys[s_key].s_right_answer
             GetPollById({ownerID, pollID, s_key, s_right_answer}).then(
                 (poll) => {
-                    // console.log('FETCH THE POLL:', poll)
                     const rightAnswerID = getRightAnswerID({
                         poll,
                         s_right_answer
@@ -170,9 +171,19 @@ export const GetWinners = (surveys) => {
                     getUsersThatResponseRight({pollID, rightAnswerID}).then(
                         (rightUsers) => {
                             console.log('RIGHT USERS:', rightUsers)
-                            dispatch({
-                                type: GET_WINNERS,
-                                payload: rightUsers
+                            let userIDs = rightUsers.join()
+                            console.log('USER IDS:', userIDs)
+                            API.getUserByIDs({userIDs}).then((usersInfo) => {
+                                console.log('USERS INFO:', usersInfo)
+                                dispatch({
+                                    type: GET_WINNERS,
+                                    payload: usersInfo
+                                })
+                                if (i === s_keys.length - 1) {
+                                    dispatch({
+                                        type: END_LOADING_WINNERS
+                                    })
+                                }
                             })
                         }
                     )

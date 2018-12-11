@@ -70,7 +70,23 @@ export const API = {
     getAnswersByAnswerID: ({pollID, rightAnswerID}) =>
         getAnswersByAnswerIdPromise({pollID, rightAnswerID}),
     getAccessToUserWall: () => VK.callMethod('showSettingsBox', 8192),
-    onSettingChange: () => onSettingChangePromise()
+    onSettingChange: () => onSettingChangePromise(),
+    getUserByIDs: ({userIDs}) =>
+        getUserByIDPromise({userIDs}).then(({response}) => {
+            return response
+        })
+}
+
+const getUserByIDPromise = ({userIDs}) => {
+    return new Promise((resolve, reject) => {
+        VK.api(
+            'users.get',
+            {v: '5.92', user_ids: userIDs, fields: 'screen_name'},
+            (data) => {
+                resolve(data)
+            }
+        )
+    })
 }
 
 const getPollById = ({ownerID, pollID}) => {
