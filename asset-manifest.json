@@ -1,14 +1,14 @@
 {
   "main.css": "/smm-service-frontend/static/css/main.0e4d394e.chunk.css",
-  "main.js": "/smm-service-frontend/static/js/main.5ec1c565.chunk.js",
-  "main.js.map": "/smm-service-frontend/static/js/main.5ec1c565.chunk.js.map",
+  "main.js": "/smm-service-frontend/static/js/main.cdfc84f8.chunk.js",
+  "main.js.map": "/smm-service-frontend/static/js/main.cdfc84f8.chunk.js.map",
   "static/js/1.3edd636d.chunk.js": "/smm-service-frontend/static/js/1.3edd636d.chunk.js",
   "static/js/1.3edd636d.chunk.js.map": "/smm-service-frontend/static/js/1.3edd636d.chunk.js.map",
   "runtime~main.js": "/smm-service-frontend/static/js/runtime~main.be1cbe97.js",
   "runtime~main.js.map": "/smm-service-frontend/static/js/runtime~main.be1cbe97.js.map",
-  "static/media/fontello.css": "/smm-service-frontend/static/media/fontello.90b809ae.eot",
+  "static/media/fontello.css": "/smm-service-frontend/static/media/fontello.17b4028a.woff2",
   "static/css/main.0e4d394e.chunk.css.map": "/smm-service-frontend/static/css/main.0e4d394e.chunk.css.map",
   "index.html": "/smm-service-frontend/index.html",
-  "precache-manifest.55363c0d4c221eb2ebaea7165abb4c76.js": "/smm-service-frontend/precache-manifest.55363c0d4c221eb2ebaea7165abb4c76.js",
+  "precache-manifest.703e1d884d4bc3c1c674d20d4b578f98.js": "/smm-service-frontend/precache-manifest.703e1d884d4bc3c1c674d20d4b578f98.js",
   "service-worker.js": "/smm-service-frontend/service-worker.js"
 }
